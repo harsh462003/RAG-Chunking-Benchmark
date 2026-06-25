@@ -1,0 +1,47 @@
+# ────────────────────────────────────────────────────────────────────
+# RAG Chunking Benchmark — requirements.txt
+# Install: pip install -r requirements.txt
+# ────────────────────────────────────────────────────────────────────
+
+# Core UI
+streamlit>=1.35.0
+
+# Data
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Embeddings (sentence-transformers pulls torch automatically)
+sentence-transformers>=2.7.0
+
+# Vector search
+faiss-cpu>=1.8.0
+
+# Local generation model (Flan-T5)
+transformers>=4.40.0
+torch>=2.1.0          # CPU version; use torch+cu121 for GPU
+
+# Document reading
+pypdf>=4.0.0
+python-docx>=1.1.0
+
+# Charts
+plotly>=5.20.0
+
+# Token counting (optional but recommended)
+tiktoken>=0.7.0
+
+# Required for Flan-T5 tokenizer
+sentencepiece>=0.1.99
+
+# Machine-learning utilities
+scikit-learn>=1.4.0
+
+# OpenAI-compatible API (optional)
+openai>=1.30.0        # only needed for API mode
+
+# ── Notes ────────────────────────────────────────────────────────────
+# For GPU (much faster embedding + generation):
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+#
+# For minimal install (heuristic judge, no local generation):
+#   pip install streamlit pandas numpy sentence-transformers faiss-cpu pypdf python-docx plotly tiktoken
